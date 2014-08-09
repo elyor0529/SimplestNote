@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="OpenFaces-3.0" type="jsf-openfaces">
+    <properties version="3.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SimplestNote.WebApp/lib/sac.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SimplestNote.WebApp/lib/jcommon.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SimplestNote.WebApp/lib/cssparser.jar!/" />
+      <root url="file://$PROJECT_DIR$/SimplestNote.WebApp/lib/openfaces-license.txt" />
+      <root url="jar://$PROJECT_DIR$/SimplestNote.WebApp/lib/openfaces.jar!/" />
+      <root url="file://$PROJECT_DIR$/SimplestNote.WebApp/lib/redistribution.txt" />
+      <root url="file://$PROJECT_DIR$/SimplestNote.WebApp/lib/commons-codec-1.3-license.txt" />
+      <root url="jar://$PROJECT_DIR$/SimplestNote.WebApp/lib/jfreechart.jar!/" />
+      <root url="file://$PROJECT_DIR$/SimplestNote.WebApp/lib/cssparser-0.9.4-license.txt" />
+      <root url="file://$PROJECT_DIR$/SimplestNote.WebApp/lib/dojo-license.txt" />
+      <root url="file://$PROJECT_DIR$/SimplestNote.WebApp/lib/jdom-1.0-license.txt" />
+      <root url="file://$PROJECT_DIR$/SimplestNote.WebApp/lib/jfreechart-license.txt" />
+      <root url="file://$PROJECT_DIR$/SimplestNote.WebApp/lib/json-license.txt" />
+      <root url="file://$PROJECT_DIR$/SimplestNote.WebApp/lib/myfaces-license.txt" />
+      <root url="jar://$PROJECT_DIR$/SimplestNote.WebApp/lib/commons-collections_2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
