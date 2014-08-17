@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1321966963">
-    <data-source source="LOCAL" name="MySQL - simplestnote@localhost" uuid="ed81f749-d7ff-49a1-a6dc-6b111841409b">
+  <component name="DataSourceManagerImpl" format="xml" hash="1728407662">
+    <data-source source="LOCAL" name="MySQL - simplestnote@localhost" uuid="27bf1ed5-c504-4914-aa8d-e883b04ad878">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
@@ -9,12 +9,15 @@
       <user-name>root</user-name>
       <user-password>dfdddfcfdfc8dfeadf9bdf98df99df9e</user-password>
       <schema-pattern>simplestnote.*</schema-pattern>
-      <default-schemas>simplestnote.*</default-schemas>
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
       </driver-properties>
-      <libraries />
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/lib/mysql-connector-java-5.1.31-bin.jar</url>
+        </library>
+      </libraries>
     </data-source>
   </component>
 </project>
