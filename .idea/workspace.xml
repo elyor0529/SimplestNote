@@ -3,21 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f5e607a3-1c32-49bd-b604-618297dbd11a" name="Default" comment="New changes...">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/account/RegisterServlet.java" afterPath="$PROJECT_DIR$/src/servlets/account/RegisterServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/SessionUtil.java" afterPath="$PROJECT_DIR$/src/utils/SessionUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlets/account/VerifyEmailServlet.java" afterPath="$PROJECT_DIR$/src/servlets/account/VerifyEmailServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/css/dashboard.css" afterPath="$PROJECT_DIR$/web/resources/css/dashboard.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/js/dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/web/resources/js/dataTables.bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/css/docs.min.css" afterPath="$PROJECT_DIR$/web/resources/css/docs.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/js/docs.min.js" afterPath="$PROJECT_DIR$/web/resources/js/docs.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/js/html5shiv.min.js" afterPath="$PROJECT_DIR$/web/resources/js/html5shiv.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/css/jquery.dataTables.css" afterPath="$PROJECT_DIR$/web/resources/css/jquery.dataTables.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/js/jquery.dataTables.js" afterPath="$PROJECT_DIR$/web/resources/js/jquery.dataTables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/css/jquery.dataTables.min.css" afterPath="$PROJECT_DIR$/web/resources/css/jquery.dataTables.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/js/jquery.dataTables.min.js" afterPath="$PROJECT_DIR$/web/resources/js/jquery.dataTables.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/includes/menu.jsp" afterPath="$PROJECT_DIR$/web/includes/menu.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/js/respond.min.js" afterPath="$PROJECT_DIR$/web/resources/js/respond.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimplestNote.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,10 +33,36 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1021021" vertical-offset="0" max-vertical-offset="333">
-              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="331">
+              <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.72" vertical-offset="0" max-vertical-offset="170">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LICENSE" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LICENSE">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="28.56" vertical-offset="1020" max-vertical-offset="3519">
+              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
@@ -72,7 +84,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/pages/dashboard/dashboard.jsp" />
         <option value="$PROJECT_DIR$/web/includes/help.html" />
         <option value="$PROJECT_DIR$/src/servlets/DashboardServlet.java" />
         <option value="$PROJECT_DIR$/web/pages/templates/noteTemplate.html" />
@@ -123,6 +134,7 @@
         <option value="$PROJECT_DIR$/src/servlets/notes/NoteListServlet.java" />
         <option value="$PROJECT_DIR$/web/includes/notes.jsp" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -684,7 +696,7 @@
       <workItem from="1408471007185" duration="1132000" />
       <workItem from="1408472169142" duration="38000" />
       <workItem from="1408472222099" duration="344000" />
-      <workItem from="1408472732208" duration="36000" />
+      <workItem from="1408472732208" duration="188000" />
     </task>
     <task id="LOCAL-00001" summary="Demo">
       <created>1408266596227</created>
@@ -698,7 +710,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77109000" />
+    <option name="totallyTimeSpent" value="77261000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -722,10 +734,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41530946" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41666666" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1127,7 +1139,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3181818" vertical-offset="1020" max-vertical-offset="3519">
+        <state vertical-scroll-proportion="28.56" vertical-offset="1020" max-vertical-offset="3519">
           <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
           <folding />
         </state>
@@ -1138,7 +1150,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22077923" vertical-offset="0" max-vertical-offset="308">
+        <state vertical-scroll-proportion="-2.72" vertical-offset="0" max-vertical-offset="170">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
@@ -1149,8 +1161,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1021021" vertical-offset="0" max-vertical-offset="333">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="331">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
           <folding />
         </state>
       </provider>
