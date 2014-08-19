@@ -18,6 +18,8 @@
 
     <jsp:include page="../includes/header.jsp" flush="true"/>
     <jsp:include page="../includes/styles.html" flush="true"/>
+    <jsp:include page="../includes/scripts.html" flush="true"/>
+
 </head>
 
 <body>

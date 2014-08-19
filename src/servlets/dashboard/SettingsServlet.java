@@ -3,6 +3,7 @@ package servlets.dashboard;
 import beans.LoginBean;
 import db.UsersEntity;
 import managers.UserManager;
+import utils.ConvertHelper;
 import utils.SessionUtil;
 
 import javax.servlet.RequestDispatcher;
@@ -32,12 +33,12 @@ public class SettingsServlet extends HttpServlet {
         } else {
             final int id = (int) loginBean.getId();
             final UsersEntity entity = (UsersEntity) manager.get(id);
-            final String email = request.getParameter("e_mail");
-            final String firstName = request.getParameter("first_name");
-            final String lastName = request.getParameter("last_name");
-            final String surName = request.getParameter("surname");
-            final String gender = request.getParameter("gender");
-            final String address = request.getParameter("address");
+            final String email = ConvertHelper.ToString(request.getParameter("e_mail"));
+            final String firstName = ConvertHelper.ToString(request.getParameter("first_name"));
+            final String lastName = ConvertHelper.ToString(request.getParameter("last_name"));
+            final String surName = ConvertHelper.ToString(request.getParameter("surname"));
+            final String gender = ConvertHelper.ToString(request.getParameter("gender"));
+            final String address = ConvertHelper.ToString(request.getParameter("address"));
             final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Date birthDay;
 

@@ -1,3 +1,4 @@
+<%@ page import="utils.SessionUtil" %>
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 <!--[if lt IE 9]>
 <script src="../resources/js/ie8-responsive-file-warning.js"></script>
@@ -12,3 +13,29 @@
 <script src="../resources/js/html5shiv.min.js"></script>
 <script src="../resources/js/hrespond.min.js"></script>
 <![endif]-->
+
+<%
+    if (SessionUtil.isAuthorize(session)) {
+%>
+
+<div class="modal" id="logoutModal" tabindex="-1" role="dialog"
+     aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4>
+                    You are sure to logout?
+                </h4>
+            </div>
+            <div class="modal-footer">
+                <form action="/logoutServlet" method="post">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                    </button>
+                    <button type="submit" class="btn btn-danger">OK</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<%
+    }%>

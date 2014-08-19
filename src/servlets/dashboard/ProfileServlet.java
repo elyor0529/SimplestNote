@@ -3,6 +3,7 @@ package servlets.dashboard;
 import beans.LoginBean;
 import db.UsersEntity;
 import managers.UserManager;
+import utils.ConvertHelper;
 import utils.SessionUtil;
 
 import javax.servlet.RequestDispatcher;
@@ -17,6 +18,7 @@ import java.io.IOException;
  * Created by Elyor on 8/17/2014.
  */
 public class ProfileServlet extends HttpServlet {
+
     private static final UserManager manager = new UserManager();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,7 +26,7 @@ public class ProfileServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        final String userId = request.getParameter("id");
+        final String userId = ConvertHelper.ToString(request.getParameter("id"));
         final int id;
 
         if (userId == null || userId.isEmpty()) {

@@ -2,6 +2,7 @@ package servlets.account;
 
 import db.UsersEntity;
 import managers.UserManager;
+import utils.ConvertHelper;
 import utils.EmailSender;
 
 import javax.servlet.RequestDispatcher;
@@ -23,11 +24,14 @@ public class VerifyEmailServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        final long uid = Long.parseLong(request.getParameter("uid"));
-        final String verification_code = request.getParameter("verification_code");
+        final long uid = Long.parseLong(ConvertHelper.ToString(request.getParameter("uid")));
+        final String verification_code = ConvertHelper.ToString(request.getParameter("verification_code"));
         final UsersEntity entity = (UsersEntity) manager.get(uid);
 
-        if (entity != null && !entity.getIsVerified() && entity.getVerificationCode().equalsIgnoreCase(verification_code)) {
+        if (entity != null &&
+                !entity.getIsVerified() &&
+                entity.getVerificationCode().equalsIgnoreCase(verification_code)) {
+            
             entity.setIsVerified(true);
 
             if (!manager.update(entity)) {

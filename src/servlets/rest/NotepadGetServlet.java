@@ -23,6 +23,10 @@ public class NotepadGetServlet extends HttpServlet {
     private static final UserManager userManager = new UserManager();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.sendRedirect("/404.jsp");
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         final String userName = request.getParameter("user");
         final String password = request.getParameter("pass");
@@ -60,9 +64,5 @@ public class NotepadGetServlet extends HttpServlet {
 
             }
         }
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/404.jsp");
     }
 }

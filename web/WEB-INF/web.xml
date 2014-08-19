@@ -79,10 +79,18 @@
         <servlet-name>settings</servlet-name>
         <url-pattern>/settingsServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>noteList</servlet-name>
+        <servlet-class>servlets.notes.NoteListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>noteList</servlet-name>
+        <url-pattern>/noteListServlet</url-pattern>
+    </servlet-mapping>
+
     <!--
     REST
     -->
-
     <servlet>
         <servlet-name>notepadGetList</servlet-name>
         <servlet-class>servlets.rest.NotepadGetListServlet</servlet-class>
@@ -95,10 +103,6 @@
         <servlet-name>notepadGetNote</servlet-name>
         <servlet-class>servlets.rest.NotepadGetServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>NoteListServlet</servlet-name>
-        <servlet-class>servlets.notes.NoteListServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>notepadGetNote</servlet-name>
         <url-pattern>/notepad/getNote</url-pattern>
@@ -110,6 +114,10 @@
     <welcome-file-list>
         <welcome-file>/index.jsp</welcome-file>
     </welcome-file-list>
+    <icon>
+        <small-icon>/resources/images/small_icon.png</small-icon>
+        <large-icon>/resources/images/large_icon.png</large-icon>
+    </icon>
     <error-page>
         <location>/404.jsp</location>
     </error-page>

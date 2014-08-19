@@ -1,5 +1,4 @@
 <%@ page import="utils.SessionUtil" %>
-
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
 
@@ -29,7 +28,6 @@
                     if (SessionUtil.isAuthorize(session)) {
                 %>
 
-
                 <li>
                     <a href="/profileServlet">
                         <span class="glyphicon glyphicon-user"></span>
@@ -42,14 +40,10 @@
                     Settings</a></li>
 
                 <li>
-                    <a id="logoutAnchor" href="#"
-                       onclick="javascript:if(!confirm('You are sure to logout?'))return; document.getElementById('logoutForm').submit(); ">
-                        <span class="glyphicon glyphicon-log-out"></span>
+                    <a data-toggle="modal" href="javascript:;" data-target="#logoutModal">
+                    <span class="glyphicon glyphicon-log-out"></span>
                         Log Out
                     </a>
-
-                    <form action="/logoutServlet" id="logoutForm" method="post">
-                    </form>
                 </li>
 
                 <%

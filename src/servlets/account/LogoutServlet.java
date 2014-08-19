@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class LogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession httpSession = request.getSession();
+        final HttpSession httpSession = request.getSession();
 
         if (!SessionUtil.isAuthorize(httpSession)) {
             response.sendRedirect("/404.jsp");

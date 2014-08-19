@@ -1,13 +1,12 @@
 package servlets.notes;
 
 import beans.LoginBean;
-import db.NotesEntity;
-import db.UsersEntity;
+import beans.NoteBean;
 import managers.NoteManager;
-import managers.UserManager;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import utils.ConvertHelper;
 import utils.SessionUtil;
 import utils.Settings;
 
@@ -17,66 +16,87 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.math.BigInteger;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Elyor on 8/17/2014.
+ * Created by Elyor on 8/18/2014.
  */
 public class NoteListServlet extends HttpServlet {
 
     private static final NoteManager noteManager = new NoteManager();
-    private static final UserManager userManager = new UserManager();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         final HttpSession session = request.getSession();
         final LoginBean loginBean = SessionUtil.getLogin(session);
-        JSONObject json = new JSONObject();
+        final long userId = loginBean.getId();
+        int start = Integer.parseInt(ConvertHelper.ToString(request.getParameter("start")));
+        int length = Integer.parseInt(ConvertHelper.ToString(request.getParameter("length")));
+        final int draw = Integer.parseInt(ConvertHelper.ToString(request.getParameter("draw")));
+        final int size = noteManager.getNoteCountByUserId(userId);
+
+        if (length == -1) {
+            length = size;
+            start = 0;
+        }
+
+        final List result = noteManager.getNotesByUserId(userId, length, start);
+        final JSONObject json = new JSONObject();
+
         try {
 
-            if (loginBean == null) {
-                json.put("message", "authorize");
+            if (result == null) {
+                json.put("error", "404");
             } else {
-                final long userId = loginBean.getId();
-                final UsersEntity userEntity = (UsersEntity) userManager.get(userId);
 
-                if (userEntity == null) {
-                    json.put("message", "not found");
-                } else {
+                final ArrayList<NoteBean> list = new ArrayList<NoteBean>();
 
-                    JSONArray notes = new JSONArray();
-                    final int limit = request.getParameter("limit").isEmpty()
-                            ? Settings.PAGING.LIMIT
-                            : Integer.parseInt(request.getParameter("limit"));
-                    final int offset = request.getParameter("offset").isEmpty()
-                            ? Settings.PAGING.OFFSET
-                            : Integer.parseInt(request.getParameter("offset"));
-                    final List result = noteManager.getLimitsByUserId(userId, limit, offset);
+                for (Object o : result) {
+                    final Object[] obj = (Object[]) o;
+                    final NoteBean noteBean = new NoteBean();
 
-                    for (Object o : result) {
+                    noteBean.setVersionCount(new BigInteger(ConvertHelper.ToString(obj[0])));
+                    noteBean.setId(new BigInteger(ConvertHelper.ToString(obj[1])));
+                    noteBean.setTitle(ConvertHelper.ToString(obj[2]));
+                    noteBean.setContent(ConvertHelper.ToString(obj[3]));
+                    noteBean.setTags(ConvertHelper.ToString(obj[4]));
+                    noteBean.setUserId(new BigInteger(ConvertHelper.ToString(obj[5])));
+                    noteBean.setCreateDate(new Timestamp(ConvertHelper.ToDate(obj[6]).getTime()));
+                    noteBean.setModifiedDate(new Timestamp(ConvertHelper.ToDate(obj[7]).getTime()));
+                    noteBean.setVersionId(new BigInteger(ConvertHelper.ToString(obj[8])));
 
-                        NotesEntity entity = (NotesEntity) o;
-                        JSONObject note = new JSONObject();
-
-                        note.put("id", entity.getId());
-                        note.put("title", entity.getTitle());
-                        note.put("create_date", entity.getCreateDate());
-                        note.put("content", entity.getContent());
-                        note.put("tags", entity.getTags());
-
-                        notes.put(note);
-                    }
-
-                    json.put("notes", notes);
-
+                    list.add(noteBean);
                 }
-            }
-            response.setContentType(Settings.REST_TYPE);
-            response.getWriter().write(json.toString());
 
+                final JSONArray notes = new JSONArray();
+
+                for (NoteBean o : list) {
+
+                    final JSONObject note = new JSONObject();
+
+                    note.put("id", o.getId());
+                    note.put("title", o.getTitle());
+                    note.put("create_date", o.getCreateDate());
+                    note.put("modified_date", o.getModifiedDate());
+
+                    notes.put(note);
+                }
+
+                json.put("data", notes);
+                json.put("draw", draw);
+
+                json.put("recordsTotal", size);
+                json.put("recordsFiltered", size);
+
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        response.setContentType(Settings.REST_TYPE);
+        response.getWriter().write(json.toString());
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

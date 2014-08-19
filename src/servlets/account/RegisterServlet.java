@@ -2,6 +2,7 @@ package servlets.account;
 
 import db.UsersEntity;
 import managers.UserManager;
+import utils.ConvertHelper;
 import utils.EmailSender;
 import utils.SessionUtil;
 import utils.StringGenerator;
@@ -29,17 +30,17 @@ public class RegisterServlet extends HttpServlet {
         final String userName = StringGenerator.generateString(8, StringGenerator.Mode.ALPHA);
         final String password = StringGenerator.generateString(6, StringGenerator.Mode.NUMERIC);
         final String verifiedCode = StringGenerator.generateString(32, StringGenerator.Mode.ALPHANUMERIC);
-        final String email = request.getParameter("e_mail");
-        final String firstName = request.getParameter("first_name");
-        final String lastName = request.getParameter("last_name");
-        final String surName = request.getParameter("surname");
-        final String gender = request.getParameter("gender");
-        final String address = request.getParameter("address");
+        final String email = ConvertHelper.ToString(request.getParameter("e_mail"));
+        final String firstName = ConvertHelper.ToString(request.getParameter("first_name"));
+        final String lastName = ConvertHelper.ToString(request.getParameter("last_name"));
+        final String surName = ConvertHelper.ToString(request.getParameter("surname"));
+        final String gender = ConvertHelper.ToString(request.getParameter("gender"));
+        final String address =ConvertHelper.ToString( request.getParameter("address"));
         final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date birthDay;
 
         try {
-            birthDay = dateFormat.parse(request.getParameter("birth_day"));
+            birthDay = dateFormat.parse(ConvertHelper.ToString(request.getParameter("birth_day")));
         } catch (ParseException e) {
             birthDay = new Date();
         }
@@ -83,7 +84,7 @@ public class RegisterServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession httpSession = request.getSession();
+        final HttpSession httpSession = request.getSession();
 
         if (!SessionUtil.isAuthorize(httpSession)) {
             response.sendRedirect("/pages/register.jsp");

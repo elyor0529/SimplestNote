@@ -27,7 +27,7 @@ public class NoteManager implements ManagerImpl {
         return session;
     }
 
-    public List getLimitsByUserId(long userId, int limit, int offset) {
+    public List getAllByUserId(long userId, int limit, int offset) {
         final String sql = "SELECT * FROM notes WHERE  parent_id IS NULL AND user_id=:user_id LIMIT :limit OFFSET :offset";
         final SQLQuery query = session.createSQLQuery(sql);
 
@@ -44,6 +44,55 @@ public class NoteManager implements ManagerImpl {
         final Query query = session.createQuery(sql);
 
         query.setParameter("user_id", userId);
+
+        return query.list();
+    }
+
+    public int getNoteCountByUserId(long userId) {
+        final String sql = "SELECT COUNT(nv.note_id) AS version_count,\n" +
+                "\t   n.id,\n" +
+                "\t   n.title,\n" +
+                "\t   n.content,\n" +
+                "\t   n.tags, \n" +
+                "\t   n.user_id,\n" +
+                "       n.create_date,\n" +
+                "       nv.modified_date,\n" +
+                "\t   nv.id AS version_id\n" +
+                "FROM note_versions AS nv\n" +
+                "INNER JOIN notes AS n ON n.id=nv.note_id\n" +
+                "WHERE n.user_id=:user_id AND n.parent_id IS NULL\n" +
+                "GROUP BY nv.note_id\n" +
+                "ORDER BY nv.id DESC";
+        final SQLQuery query = session.createSQLQuery(sql);
+
+        query.setParameter("user_id", userId);
+
+        final List list = query.list();
+
+        return list == null ? 0 : list.size();
+    }
+
+    public List getNotesByUserId(long userId, int limit, int offset) {
+        final String sql = "SELECT COUNT(nv.note_id) AS version_count,\n" +
+                "\t   n.id,\n" +
+                "\t   n.title,\n" +
+                "\t   n.content,\n" +
+                "\t   n.tags, \n" +
+                "\t   n.user_id,\n" +
+                "       n.create_date,\n" +
+                "       nv.modified_date,\n" +
+                "\t   nv.id AS version_id\n" +
+                "FROM note_versions AS nv\n" +
+                "INNER JOIN notes AS n ON n.id=nv.note_id\n" +
+                "WHERE n.user_id=:user_id AND n.parent_id IS NULL\n" +
+                "GROUP BY nv.note_id\n" +
+                "ORDER BY nv.id DESC " +
+                "LIMIT :limit OFFSET :offset";
+        final SQLQuery query = session.createSQLQuery(sql);
+
+        query.setParameter("user_id", userId);
+        query.setParameter("limit", limit);
+        query.setParameter("offset", offset);
 
         return query.list();
     }

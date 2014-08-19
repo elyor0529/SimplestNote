@@ -15,15 +15,20 @@
 
     <jsp:include page="../includes/header.jsp" flush="true"/>
     <jsp:include page="../includes/styles.html" flush="true"/>
+    <jsp:include page="../includes/scripts.html" flush="true"/>
 
 </head>
 
 <body>
 <jsp:include page="../includes/menu.jsp" flush="true"/>
 <div class="container">
-    <jsp:include page="../includes/notes.jsp" flush="true"/>
-</div>
 
+    <!--
+    Notes
+    -->
+    <jsp:include page="../includes/notes.jsp" flush="false"/>
+
+</div>
 <jsp:include page="../includes/footer.jsp" flush="true"/>
 
 </body>
