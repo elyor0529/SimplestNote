@@ -1,8 +1,6 @@
 package utils;
 
 import beans.LoginBean;
-import db.UsersEntity;
-import managers.UserManager;
 
 import javax.servlet.http.HttpSession;
 

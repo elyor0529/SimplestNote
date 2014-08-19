@@ -35,7 +35,7 @@ public class RegisterServlet extends HttpServlet {
         final String lastName = ConvertHelper.ToString(request.getParameter("last_name"));
         final String surName = ConvertHelper.ToString(request.getParameter("surname"));
         final String gender = ConvertHelper.ToString(request.getParameter("gender"));
-        final String address =ConvertHelper.ToString( request.getParameter("address"));
+        final String address = ConvertHelper.ToString(request.getParameter("address"));
         final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date birthDay;
 

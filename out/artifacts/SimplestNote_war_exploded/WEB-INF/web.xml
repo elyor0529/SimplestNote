@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!--
+        Sign In
+    -->
+    <servlet>
+        <servlet-name>login</servlet-name>
+        <servlet-class>servlets.account.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--
+    Log out
+    -->
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>servlets.account.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logoutServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--
+    Verification email
+    -->
+    <servlet>
+        <servlet-name>verifyEmail</servlet-name>
+        <servlet-class>servlets.account.VerifyEmailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>verifyEmail</servlet-name>
+        <url-pattern>/verifyEmail</url-pattern>
+    </servlet-mapping>
+
+    <!--
+    Sign Up
+-->
+    <servlet>
+        <servlet-name>register</servlet-name>
+        <servlet-class>servlets.account.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>register</servlet-name>
+        <url-pattern>/registerServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--
+    Dashboard
+    -->
+    <servlet>
+        <servlet-name>dashboard</servlet-name>
+        <servlet-class>servlets.dashboard.HomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dashboard</servlet-name>
+        <url-pattern>/dashboardServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>profile</servlet-name>
+        <servlet-class>servlets.dashboard.ProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>profile</servlet-name>
+        <url-pattern>/profileServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>settings</servlet-name>
+        <servlet-class>servlets.dashboard.SettingsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>settings</servlet-name>
+        <url-pattern>/settingsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>noteList</servlet-name>
+        <servlet-class>servlets.notes.NoteListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>noteList</servlet-name>
+        <url-pattern>/noteListServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--
+    REST
+    -->
+    <servlet>
+        <servlet-name>notepadGetList</servlet-name>
+        <servlet-class>servlets.rest.NotepadGetListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>notepadGetList</servlet-name>
+        <url-pattern>/notepad/getList</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>notepadGetNote</servlet-name>
+        <servlet-class>servlets.rest.NotepadGetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>notepadGetNote</servlet-name>
+        <url-pattern>/notepad/getNote</url-pattern>
+    </servlet-mapping>
+
+    <!--
+   Home page
+-->
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+    <icon>
+        <small-icon>/resources/images/small_icon.png</small-icon>
+        <large-icon>/resources/images/large_icon.png</large-icon>
+    </icon>
+    <error-page>
+        <location>/404.jsp</location>
+    </error-page>
+
+</web-app>

@@ -31,7 +31,7 @@ public class VerifyEmailServlet extends HttpServlet {
         if (entity != null &&
                 !entity.getIsVerified() &&
                 entity.getVerificationCode().equalsIgnoreCase(verification_code)) {
-            
+
             entity.setIsVerified(true);
 
             if (!manager.update(entity)) {
