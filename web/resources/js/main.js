@@ -5,15 +5,19 @@ function formatDate(date) {
     return date.toLocaleDateString();
 }
 
+function isNumber(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
 $(function () {
 
-    $('#logoutModal').modal({
+    $('.modal').modal({
         backdrop: true,
         keyboard: true,
         show: false
     });
 
-    $('input.datepicker').datepicker({
+    $('.datepicker').datepicker({
         format: 'yyyy-mm-dd'
     });
 

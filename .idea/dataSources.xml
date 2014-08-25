@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1728407662">
+  <component name="DataSourceManagerImpl" format="xml" hash="3697466852">
     <data-source source="LOCAL" name="MySQL - simplestnote@localhost" uuid="27bf1ed5-c504-4914-aa8d-e883b04ad878">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -16,6 +16,30 @@
       <libraries>
         <library>
           <url>file://$PROJECT_DIR$/lib/mysql-connector-java-5.1.31-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml" uuid="5ac87aab-2d76-49ff-b511-a9c065aa49f5">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/simplestnote</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfdddfcfdfc8dfeadf9bdf98df99df9e</user-password>
+      <libraries>
+        <library>
+          <url>file://D:\projects\Github\SimplestNote\lib\mysql-connector-java-5.1.31-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="main:hibernate.cfg.xml" uuid="56d260c1-4844-48cf-a5f2-5eb462febc20">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/simplestnote</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfdddfcfdfc8dfeadf9bdf98df99df9e</user-password>
+      <libraries>
+        <library>
+          <url>file://D:\projects\Github\SimplestNote\lib\mysql-connector-java-5.1.31-bin.jar</url>
         </library>
       </libraries>
     </data-source>

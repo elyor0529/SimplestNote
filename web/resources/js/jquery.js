@@ -4298,7 +4298,7 @@
                 handler.guid = jQuery.guid++;
             }
 
-            // Init the element's event structure and main handler, if this is the first
+            // Init the element's event structure and main.css handler, if this is the first
             if (!(events = elemData.events)) {
                 events = elemData.events = {};
             }
@@ -5300,7 +5300,7 @@
         rscriptTypeMasked = /^true\/(.*)/,
         rcleanScript = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g,
 
-    // We have to close these tags to support XHTML (#13200)
+    // We have to close these servlets.tags to support XHTML (#13200)
         wrapMap = {
             option: [ 1, "<select multiple='multiple'>", "</select>" ],
             legend: [ 1, "<fieldset>", "</fieldset>" ],
@@ -5311,7 +5311,7 @@
             col: [ 2, "<table><tbody></tbody><colgroup>", "</colgroup></table>" ],
             td: [ 3, "<table><tbody><tr>", "</tr></tbody></table>" ],
 
-            // IE6-8 can't serialize link, script, style, or any html5 (NoScope) tags,
+            // IE6-8 can't serialize link, script, style, or any html5 (NoScope) servlets.tags,
             // unless wrapped in a div with non-breaking characters in front of it.
             _default: support.htmlSerialize ? [ 0, "", "" ] : [ 1, "X<div>", "</div>"  ]
         },

@@ -8,7 +8,7 @@
 --%>
 <%
     if (!SessionUtil.isAuthorize(session)) {
-        response.sendRedirect("/pages/login.jsp");
+        response.sendRedirect("/loginServlet");
     } else {
         response.sendRedirect("/dashboardServlet");
     }

@@ -29,6 +29,7 @@
     <p class="alert alert-danger">
         <%
             Object result = request.getAttribute("error_result");
+            
             if (result != null) {%>
         <%=result.toString()%>
     </p>
