@@ -21,32 +21,27 @@ public class TagServlet extends HttpServlet {
     private static final NoteManager noteManager = new NoteManager();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        final JSONObject json = new JSONObject();
+        response.sendRedirect("/404.jsp");
+    }
 
-        try {
-            final List result = noteManager.getAllTags();
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        final JSONArray json = new JSONArray();
 
-            if (result == null) {
-                json.put("status", "404");
-            } else {
-                final JSONArray notes = new JSONArray();
+        final List result = noteManager.getAllTags();
 
-                for (Object o : result) {
-                    notes.put(ConvertHelper.ToString(o));
-                }
+        if (result == null) {
+            json.put("404");
+        } else {
+            final JSONArray notes = new JSONArray();
 
-                json.put("tags", notes);
-
+            for (Object o : result) {
+                notes.put(ConvertHelper.ToString(o));
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
+
+            json.put(notes);
         }
 
         response.setContentType(Settings.REST_TYPE);
         response.getWriter().write(json.toString());
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/404.jsp");
     }
 }

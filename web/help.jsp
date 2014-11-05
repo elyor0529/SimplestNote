@@ -11,7 +11,7 @@
       xmlns:jsp="http://java.sun.com/JSP/Page">
 <head>
 
-    <title>Home Page | SimplestNote</title>
+    <title>Help | SimplestNote</title>
 
     <jsp:include page="includes/header.jsp" flush="true"/>
     <jsp:include page="includes/styles.html" flush="true"/>

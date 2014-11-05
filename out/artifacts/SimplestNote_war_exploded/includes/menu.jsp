@@ -41,7 +41,7 @@
 
                 <li>
                     <a data-toggle="modal" href="javascript:;" data-target="#logoutModal">
-                    <span class="glyphicon glyphicon-log-out"></span>
+                        <span class="glyphicon glyphicon-log-out"></span>
                         Log Out
                     </a>
                 </li>

@@ -73,7 +73,7 @@ public class NotepadServlet extends HttpServlet {
                             note.put("title", entity.getTitle());
                             note.put("create_date", entity.getCreateDate());
                             note.put("content", entity.getContent());
-                            note.put("servlets/tags", ConvertHelper.ToString(entity.getTags()));
+                            note.put("tags", ConvertHelper.ToString(entity.getTags()));
 
                             notes.put(note);
                         }
@@ -84,7 +84,7 @@ public class NotepadServlet extends HttpServlet {
 
                     if (restType.equals(RESTTypes.GET)) {
 
-                        final int noteId = Integer.parseInt(request.getParameter("note"));
+                        final int noteId = Integer.parseInt(request.getParameter("id"));
                         final Object o = noteManager.getByUserId(userId, noteId);
                         final NotesEntity entity = (NotesEntity) o;
                         JSONObject note = new JSONObject();
@@ -93,7 +93,7 @@ public class NotepadServlet extends HttpServlet {
                         note.put("title", entity.getTitle());
                         note.put("create_date", entity.getCreateDate());
                         note.put("content", entity.getContent());
-                        note.put("servlets/tags", entity.getTags());
+                        note.put("tags", entity.getTags());
 
                         json.put("note", note);
                     }

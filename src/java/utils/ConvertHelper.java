@@ -77,5 +77,4 @@ public final class ConvertHelper {
         return ToLong(ToString(o));
     }
 
-
 }

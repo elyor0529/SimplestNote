@@ -1,9 +1,0 @@
-.navbar-fixed-top, .navbar-fixed-bottom {
-  position: fixed;
-  /* other properties */
-}
-
-@media (max-width: 979px)
-.navbar-fixed-top, .navbar-fixed-bottom {
-  position: static;
-}

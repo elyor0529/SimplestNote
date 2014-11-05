@@ -25,7 +25,6 @@ import java.util.List;
 public class NoteServlet extends HttpServlet {
 
     private static final NoteManager noteManager = new NoteManager();
-    private static final NoteVersionsManager noteVersionsManager = new NoteVersionsManager();
 
     /*
    * Change
@@ -43,7 +42,7 @@ public class NoteServlet extends HttpServlet {
                 final long noteId = ConvertHelper.ToLong(request.getParameter("id"));
                 final String title = ConvertHelper.ToString(request.getParameter("title"));
                 final String content = ConvertHelper.ToString(request.getParameter("content"));
-                final String tags = ConvertHelper.ToString(request.getParameter("servlets/tags"));
+                final String tags = ConvertHelper.ToString(request.getParameter("tags"));
                 final NotesEntity note = new NotesEntity();
 
                 note.setId(noteId);
@@ -63,7 +62,7 @@ public class NoteServlet extends HttpServlet {
                     noteJson.put("title", ConvertHelper.ToString(obj[1]));
                     noteJson.put("create_date", ConvertHelper.ToDate(obj[5]));
                     noteJson.put("modified_date", ConvertHelper.ToDate(obj[6]));
-                    noteJson.put("servlets/tags", ConvertHelper.ToString(obj[3]));
+                    noteJson.put("tags", ConvertHelper.ToString(obj[3]));
                     noteJson.put("content", ConvertHelper.ToString(obj[2]));
                     noteJson.put("version_id", ConvertHelper.ToBigInteger(obj[7]));
                     noteJson.put("version_count", ConvertHelper.ToBigInteger(obj[8]));
@@ -95,7 +94,7 @@ public class NoteServlet extends HttpServlet {
                 final long userId = loginBean.getId();
                 final String title = ConvertHelper.ToString(request.getParameter("title"));
                 final String content = ConvertHelper.ToString(request.getParameter("content"));
-                final String tags = ConvertHelper.ToString(request.getParameter("servlets/tags"));
+                final String tags = ConvertHelper.ToString(request.getParameter("tags"));
                 final NotesEntity note = new NotesEntity();
 
                 note.setUserId(userId);
@@ -116,7 +115,7 @@ public class NoteServlet extends HttpServlet {
                     noteJson.put("title", ConvertHelper.ToString(obj[1]));
                     noteJson.put("create_date", ConvertHelper.ToDate(obj[5]));
                     noteJson.put("modified_date", ConvertHelper.ToDate(obj[6]));
-                    noteJson.put("servlets/tags", ConvertHelper.ToString(obj[3]));
+                    noteJson.put("tags", ConvertHelper.ToString(obj[3]));
                     noteJson.put("content", ConvertHelper.ToString(obj[2]));
                     noteJson.put("version_id", ConvertHelper.ToBigInteger(obj[7]));
                     noteJson.put("version_count", ConvertHelper.ToBigInteger(obj[8]));
@@ -192,7 +191,7 @@ public class NoteServlet extends HttpServlet {
                         note.put("title", ConvertHelper.ToString(obj[1]));
                         note.put("create_date", ConvertHelper.ToDate(obj[5]));
                         note.put("modified_date", ConvertHelper.ToDate(obj[6]));
-                        note.put("servlets/tags", ConvertHelper.ToString(obj[3]));
+                        note.put("tags", ConvertHelper.ToString(obj[3]));
                         note.put("content", ConvertHelper.ToString(obj[2]));
                         note.put("version_id", ConvertHelper.ToBigInteger(obj[7]));
                         note.put("version_count", ConvertHelper.ToBigInteger(obj[8]));

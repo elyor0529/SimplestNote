@@ -21,13 +21,33 @@
 
 <body>
 <jsp:include page="../includes/menu.jsp" flush="true"/>
-<div class="container">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2 col-md-2 sidebar">
 
-    <!--
-    Notes
-    -->
-    <jsp:include page="../includes/notes.jsp" flush="false"/>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="/index.jsp">
+                        Notes</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/api.jsp">
+                        Api</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-10 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
+            <div class="row">
+
+                <!--
+                  Notes
+                  -->
+                <jsp:include page="../includes/notes.jsp" flush="false"/>
+
+            </div>
+        </div>
+    </div>
 </div>
 <jsp:include page="../includes/footer.jsp" flush="true"/>
 

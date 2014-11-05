@@ -11,7 +11,7 @@
       xmlns:jsp="http://java.sun.com/JSP/Page">
 <head>
 
-    <title>Home Page | SimplestNote</title>
+    <title>Help | SimplestNote</title>
 
     <jsp:include page="includes/header.jsp" flush="true"/>
     <jsp:include page="includes/styles.html" flush="true"/>
@@ -48,7 +48,7 @@
         the following. Each note has a title and a content (both plain text). The length of the title may be limited,
         whereas the content length should be unlimited. Notes are also associated with their creation date, last
         modification date, version number (corresponding to the number of times the note has been updated) and an
-        arbitrary number of tags, defined as words or short sequences of words (e.g., "news", "work" or "private
+        arbitrary number of servlets.tags, defined as words or short sequences of words (e.g., "news", "work" or "private
         messages"). The system stores all the versions of each note, so as to prevent unwanted changes and provide a
         note history. It will be possible to share a note with other users of the system, making it appear in their
         notepads and possibly allowing them to modify it.

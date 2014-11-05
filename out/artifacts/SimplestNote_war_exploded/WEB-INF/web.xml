@@ -80,32 +80,34 @@
         <url-pattern>/settingsServlet</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>noteList</servlet-name>
-        <servlet-class>servlets.notes.NoteListServlet</servlet-class>
+        <servlet-name>note</servlet-name>
+        <servlet-class>servlets.notes.NoteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>noteList</servlet-name>
-        <url-pattern>/noteListServlet</url-pattern>
+        <servlet-name>note</servlet-name>
+        <url-pattern>/noteServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>tag</servlet-name>
+        <servlet-class>servlets.tags.TagServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tag</servlet-name>
+        <url-pattern>/tagServlet</url-pattern>
+    </servlet-mapping>
+
 
     <!--
     REST
     -->
     <servlet>
-        <servlet-name>notepadGetList</servlet-name>
-        <servlet-class>servlets.rest.NotepadGetListServlet</servlet-class>
+        <servlet-name>notepad</servlet-name>
+        <servlet-class>servlets.rest.NotepadServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>notepadGetList</servlet-name>
-        <url-pattern>/notepad/getList</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>notepadGetNote</servlet-name>
-        <servlet-class>servlets.rest.NotepadGetServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>notepadGetNote</servlet-name>
-        <url-pattern>/notepad/getNote</url-pattern>
+        <servlet-name>notepad</servlet-name>
+        <url-pattern>/notepadServlet</url-pattern>
     </servlet-mapping>
 
     <!--

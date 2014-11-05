@@ -27,14 +27,12 @@
 
             <ul class="list-group">
                 <li class="list-group-item">
-                    <span class="badge">0</span>
-                    <a href="#noteServlet">
+                    <a href="/index.jsp">
                         Notes</a>
                 </li>
                 <li class="list-group-item">
-                    <span class="badge">0</span>
-                    <a href="#userServlet">
-                        Users</a>
+                    <a href="/api.jsp">
+                        Api</a>
                 </li>
             </ul>
         </div>

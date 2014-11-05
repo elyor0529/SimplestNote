@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/simplestnote</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/simplestnote</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.username">root</property>
         <property name="connection.password">web@1234</property>
@@ -14,8 +14,6 @@
         <mapping resource="db/NoteVersionsEntity.hbm.xml"/>
         <mapping resource="db/NotesEntity.hbm.xml"/>
         <mapping class="db.NotesEntity"/>
-        <mapping resource="db/TagsEntity.hbm.xml"/>
-        <mapping class="db.TagsEntity"/>
         <mapping class="db.UsersEntity"/>
         <mapping resource="db/UsersEntity.hbm.xml"/>
         <!-- DB schema will be updated if needed -->

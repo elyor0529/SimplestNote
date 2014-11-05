@@ -64,9 +64,10 @@ public class NoteManager implements ManagerImpl {
                 "   ,(SELECT 0 AS N UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) b\n" +
                 "    ORDER BY n\n" +
                 ") n\n" +
-                " WHERE n.n <= 1 + (LENGTH(t.tags) - LENGTH(REPLACE(t.tags, ' ', '')))\n" +
+                " WHERE n.n <= 1 + (LENGTH(t.tags) - LENGTH(REPLACE(t.tags, ' ', ''))) " +
                 " ORDER BY tag";
-        final SQLQuery query = session.createSQLQuery(sql);
+        final Query query = session.createSQLQuery(sql);
+
         final List list = query.list();
 
         return list;

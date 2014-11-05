@@ -1,5 +1,5 @@
-CREATE DATABASE `simplestnote`
-  DEFAULT CHARACTER SET utf8;
+# CREATE DATABASE `simplestnote`
+#   DEFAULT CHARACTER SET utf8;
 CREATE TABLE note_permissions
 (
   id              INT PRIMARY KEY NOT NULL AUTO_INCREMENT,

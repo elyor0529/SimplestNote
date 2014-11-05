@@ -1,0 +1,29 @@
+140903 19:51:36 [Note] Plugin 'FEDERATED' is disabled.
+140903 19:51:36 InnoDB: The InnoDB memory heap is disabled
+140903 19:51:36 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+140903 19:51:36 InnoDB: Compressed tables use zlib 1.2.3
+140903 19:51:36 InnoDB: Initializing buffer pool, size = 128.0M
+140903 19:51:36 InnoDB: Completed initialization of buffer pool
+140903 19:51:36 InnoDB: Error: tablespace size must be at least 10 MB
+140903 19:51:36 [ERROR] Plugin 'InnoDB' init function returned error.
+140903 19:51:36 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'events_waits_current' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'events_waits_history' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'events_waits_history_long' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'setup_consumers' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'setup_instruments' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'setup_timers' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'performance_timers' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'threads' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'events_waits_summary_by_thread_by_event_name' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'events_waits_summary_by_instance' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'events_waits_summary_global_by_event_name' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'file_summary_by_event_name' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'file_summary_by_instance' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'mutex_instances' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'rwlock_instances' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'cond_instances' has the wrong structure
+140903 19:51:37 [ERROR] Native table 'performance_schema'.'file_instances' has the wrong structure
+140903 19:51:37 [Note] Event Scheduler: Loaded 0 events
+140903 19:51:37 [Note] D:\projects\SimplestNote\tmp\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.5.13'  socket: ''  port: 3306  MySQL Community Server (GPL)

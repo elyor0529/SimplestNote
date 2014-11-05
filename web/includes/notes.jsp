@@ -6,18 +6,40 @@
   To change this template use File | Settings | File Templates.
 --%>
 <link href="/resources/js/agularjs/ng-table/ng-table.min.css"/>
-<link href="/resources/js/select2/select2-bootstrap.css"/>
+<link href="/resources/js/jquery-ui/jquery-ui.min.css"/>
+<style>
+    .ui-autocomplete-loading {
+        background: white url("../resources/images/ui-anim_basic_16x16.gif") right center no-repeat;
+    }
 
-<script src="/resources/js/select2/select2.min.js"></script>
+    .ui-autocomplete {
+        z-index: 5000 !important;
+        position: absolute;
+    }
+
+</style>
+
 <script src="/resources/js/agularjs/angular.min.js"></script>
 <script src="/resources/js/agularjs/angular-resource.min.js"></script>
 <script src="/resources/js/agularjs/ng-table/ng-table.min.js"></script>
 <script src="/resources/js/agularjs/ng-table/ng-table-export.src.js"></script>
+<script src="/resources/js/jquery-ui/jquery-ui.min.js"></script>
 <script>
 
     var restUrl = '/noteServlet';
     var tagUrl = '/tagServlet';
     var app = angular.module("noteApp", ['ngResource', 'ngTable', 'ngTableExport']);
+    var availableTags = [];
+
+    function loadTags() {
+        $.getJSON(tagUrl, function (data) {
+
+            $.each(data, function (key, val) {
+                availableTags.push(val);
+            });
+
+        });
+    }
 
     app.controller("noteController", ['$http', '$scope', '$filter', 'ngTableParams', function ($http, $scope, $filter, ngTableParams) {
 
@@ -99,38 +121,6 @@
                     });
         };
 
-        //tags
-        $scope.getTags = function () {
-            $http({
-                url: tagUrl,
-                method: 'POST',
-                params: {
-                },
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-                    .success(function (data, status, headers, config) {
-
-                        var items = jQuery.map(data.tags, function (n, i) {
-                            return '"' + n + '"';
-                        }).join(",");
- 
-                        $(".tags").select2({
-                            tags: [items],
-                            maximumSelectionSize: 250,
-                            allowClear: true,
-                            tokenSeparators: [" "],
-                            multiple: true
-                        });
-
-                        console.log(data);
-                    })
-                    .error(function (data, status, headers, config) {
-                        console.error(data);
-                    });
-        };
-
         //edit item
         $scope.editNote = function (note) {
             $http({
@@ -149,6 +139,7 @@
                     .success(function (data, status, headers, config) {
                         if (data.status == "200") {
                             $scope.notes[$scope.notes.indexOf(note)] = data.note;
+
                             $('#editNoteModal_' + note.id).modal('hide');
                             $('#editNoteModal_' + note.id).find("form").eq(0).trigger("reset");
                         } else {
@@ -176,6 +167,7 @@
                     .success(function (data, status, headers, config) {
                         if (data.status == "200") {
                             $scope.notes.splice($scope.notes.indexOf(note), 1);
+
                             $('#deleteNoteModal_' + note.id).modal('hide');
                         } else {
                             alert("Deleting error");
@@ -191,19 +183,49 @@
             //load list
             $scope.getNotes();
 
-            //load tags
-            $scope.getTags();
-
         };
 
         $scope.init();
 
     }]);
 
+    $(function () {
+
+        loadTags();
+
+        $("input.tags").bind("keydown", function (event) {
+            if (event.keyCode === $.ui.keyCode.TAB && $(this).autocomplete("instance").menu.active) {
+                event.preventDefault();
+            }
+        })
+                .autocomplete({
+                    minLength: 2,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(", ");
+                        return false;
+                    }
+                });
+    });
+
 </script>
 <div class="page-header">
     <h2>
-        <spa class="glyphicon glyphicon-tasks"></spa>
+        <span class="glyphicon glyphicon-tasks"></span>
         List of notes
     </h2>
 </div>
@@ -242,7 +264,7 @@
                             </textarea>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group widget">
                             <label class="control-label">Tags:</label>
                             <input type="text" ng-model="note.tags" class="form-control tags"/>
                         </div>
@@ -310,11 +332,11 @@
                                     </tr>
                                     <tr>
                                         <th>Create Date</th>
-                                        <td>{{note.create_date}}</td>
+                                        <td>{{formatDate(note.create_date)}}</td>
                                     </tr>
                                     <tr>
                                         <th>Modified Date</th>
-                                        <td>{{note.modified_date}}</td>
+                                        <td>{{formatDate(note.modified_date)}}</td>
                                     </tr>
                                     <tr>
                                         <th>Tags:</th>
@@ -397,9 +419,10 @@
                                     </div>
 
                                     <div class="form-group">
+
                                         <label class="control-label">Tags:</label>
-                                        <input type="text" ng-model="note.tags" value="{{note.tags}}"
-                                               class="form-control tags"/>
+                                        <input ng-model="note.tags" type="text" class="form-control tags"
+                                               value="{{note.title}}"/>
                                     </div>
 
                                 </form>

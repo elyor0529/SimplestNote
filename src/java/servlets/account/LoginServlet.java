@@ -25,7 +25,8 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
 
         if (entity != null) {
 
-            if (!entity.getIsVerified()) {
+            if (entity.getIsVerified() == null ||
+                    !entity.getIsVerified()) {
                 request.setAttribute("login_result", "Not verified");
                 RequestDispatcher rd = getServletContext().getRequestDispatcher("/pages/login.jsp");
 

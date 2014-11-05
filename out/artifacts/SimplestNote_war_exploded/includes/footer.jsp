@@ -31,7 +31,7 @@
                 <form action="/logoutServlet" method="post">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close
                     </button>
-                    <button type="submit" class="btn btn-danger">OK</button>
+                    <button type="submit" class="btn btn-warning">OK</button>
                 </form>
             </div>
         </div>
